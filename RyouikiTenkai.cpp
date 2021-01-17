@@ -3,6 +3,8 @@
 #include "Human.h"
 #include "Sukuna.h"
 #include "Gojo.h"
+
+//呪術廻戦 領域展開するサンプル
 int main(void){
     
     norisample::Sukuna ryoumenSukuna("両面宿儺");
