@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 #include "Human.h"
 #include "Sukuna.h"
@@ -10,11 +12,11 @@ int main(void){
     norisample::Sukuna ryoumenSukuna("両面宿儺");
     norisample::Gojo gojoSatoru("五条 悟");
     
-    norisample::Human* jujutsuShi[2];
-    jujutsuShi[0]=&gojoSatoru;
-    jujutsuShi[1]=&ryoumenSukuna;
-    for(norisample::Human* human : jujutsuShi){
+    std::vector<norisample::Human*> jujutsuShi={&ryoumenSukuna};
+    jujutsuShi.push_back(&gojoSatoru);
+
+    std::for_each(jujutsuShi.begin(),jujutsuShi.end(),[](norisample::Human* human){
         human->ShowProfile();
         human->RyouikiTenkai();
-    }
+    });
 }
